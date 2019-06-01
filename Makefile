@@ -1,3 +1,6 @@
+HOMEDIR = $(shell echo ${HOME})
+FONTSDIR = $(HOMEDIR)/.local/share/fonts
+
 all: build run
 
 build:
@@ -27,3 +30,12 @@ pres:
 
 pres_it_planet:
 	make -C presentation_it_planet run
+
+install-fonts:
+	mkdir -p $(FONTSDIR)
+	wget -O $(FONTSDIR)/xits-math.otf https://github.com/khaledhosny/xits-math/raw/master/XITSMath-Regular.otf
+	#wget http://www.paratype.ru/uni/public/PTSansOFL.zip
+	#wget http://www.paratype.ru/uni/public/PTMono.zip
+	#unzip PTSansOFL.zip -d $(FONTSDIR)/ && unzip PTMono.zip -d $(FONTSDIR)/
+	#rm -f PTSansOFL.zip PTMono.zip
+	fc-cache -f -v
