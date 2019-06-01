@@ -1,27 +1,26 @@
-FROM ubuntu:18.04
-LABEL maintainer="Amet13 <admin@amet13.name>"
+FROM ubuntu:19.04
+LABEL maintainer="mikhailnov"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
-ENV DIR /master-thesis
+ENV DIR /qtcreator-guide
 
 RUN mkdir $DIR
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
 RUN apt update && \
     apt install -y wget \
-        git \
-        make \
-        apt-transport-https \
-        unzip && \
-    apt install -y texlive-base \
+        make && \
+    apt install -y \
+        texlive-base \
         texlive-latex-extra \
         texlive-xetex \
         texlive-lang-cyrillic \
-        texlive-fonts-extra \
         texlive-science \
         texlive-latex-recommended \
         latexmk \
-        fonts-liberation2
+        fonts-liberation2 \
+        fonts-freefont-ttf \
+        texlive-fonts-extra
 
 # Times New Roman and other fonts
 RUN apt install -y --reinstall ttf-mscorefonts-installer && \

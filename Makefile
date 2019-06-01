@@ -1,13 +1,14 @@
+DIR0 = $(shell pwd)
 HOMEDIR = $(shell echo ${HOME})
 FONTSDIR = $(HOMEDIR)/.local/share/fonts
 
 all: build run
 
 build:
-	latexmk -xelatex -synctex=1 -jobname=master-thesis main.tex
+	latexmk -xelatex -synctex=1 -jobname=qtcreator-guide main.tex
 
 run:
-	xdg-open master-thesis.pdf
+	xdg-open qtcreator-guide.pdf
 
 clean:
 	rm *.aux \
@@ -21,10 +22,12 @@ clean:
 	*.toc \
 	*.xdv
 
-docker:
+docker-image:
 	docker build -t docker-latex .
-	docker run --rm -ti -v ${PWD}:/master-thesis:Z docker-latex bash -c "make build && make clean"
-	docker run --rm -ti -v ${PWD}:/master-thesis:Z docker-latex bash -c "make -C presentation && make -C presentation clean"
+
+docker:
+	# add your user to group 'docker' to run docker without root
+	docker run --rm -ti -v $(DIR0):/qtcreator-guide:Z docker-latex bash -c "cd /qtcreator-guide && make build && make clean"
 
 pres:
 	make -C presentation run
