@@ -18,7 +18,8 @@ clean:
 	*.log \
 	*.out \
 	*.synctex.gz \
-	*.toc
+	*.toc \
+	*.xdv
 
 docker:
 	docker build -t docker-latex .
