@@ -137,7 +137,7 @@
 \newcommand{\addimg}[4]{ % Добавление одного рисунка
     \begin{figure}
         \centering
-        \includegraphics[width=#2\linewidth]{#1}
+        \includegraphics[scale=1,width=#2\linewidth]{#1}
         \caption{#3} \label{#4}
     \end{figure}
 }
@@ -185,11 +185,6 @@
     \phantomsection % Корректный переход по ссылкам в содержании
     \paragraph{\centerline{{#1}}\vspace{1em}}
     \addcontentsline{toc}{section}{#1}
-}
-
-% Секция для аннотации (она не включается в содержание)
-\newcommand{\annotation}[1]{
-    \paragraph{\centerline{{#1}}\vspace{1em}}
 }
 
 % Секция для списка иллюстративного материала
