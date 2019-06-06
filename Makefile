@@ -11,7 +11,7 @@ run:
 	xdg-open qtcreator-guide.pdf
 
 clean:
-	rm *.aux \
+	rm -fv *.aux \
 	*.fdb_latexmk \
 	*.fls \
 	*.lof \
