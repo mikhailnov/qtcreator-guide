@@ -18,17 +18,19 @@
 \end{itemize}
 \addimghere{qt_win_1}{1}{Выбор модели распространения Qt}{qt_win_1}
 
+Для построения графиков будет использоваться библиотека QCustomPlot. На Windows придется скачать с сайта https://www.qcustomplot.com/ в разделе "Download" архив QCustomPlot.tar.gz, из которого файлы ./qcustomplot.cpp и ./qcustomplot.h нужно будет в дальнейшем вручную добавить в проект Qt Creator. В случае Linux/BSD библиотека QCustomPlot есть в репозитории большинства дистрибутивов, достаточно поставить ее оттуда, приведенные ниже списки пакетов для Linux/BSD уже содержат ее, однако можно включить скачанные с сайта файлы в проект. При установке из репозитория ничего скачивать и добавлять в проект не нужно.
+
 \subsubsection{Установка Qt на GNU/Linux и BSD-системы}
 На Linux можно так же скачать и поставить полный набор для разработки на Qt с сайта Qt, однако гораздо удобнее и быстрее поставить все необходимое из репозитория используемого дистрибутива.
 
 Установка на Ubuntu/Mint/Debian:
 \begin{lstlisting}[language=bash]
-sudo apt install --install-recommends build-essential clang qtcreator git
+sudo apt install --install-recommends build-essential clang qtcreator git libqcustomplot-dev
 \end{lstlisting}
 
 Установка на ROSA:
 \begin{lstlisting}[language=bash]
-sudo urpmi basesystem-build clang qt-creator git
+sudo urpmi basesystem-build clang qt-creator git lib64qcustomplot-qt5-devel
 \end{lstlisting}
 
 Установка на FreeBSD/DragonFlyBSD:
