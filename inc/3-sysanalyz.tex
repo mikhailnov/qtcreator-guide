@@ -32,14 +32,14 @@
 \addimghere{qtc31}{1}{Редактирование инструкций qmake}{qtc31}
 
 Если вы установили qcustomplot из репозитория, то есть если будет использоваться общесистемная библиотека qcustomplot, то откройте файл *.h (например, graqa.h или mainwindow.h), созданный при создании проекта, и в нем после
-\begin{lstlisting}[language=c++]
+\begin{minted}[breaklines]{c++}
 #include <QMainWindow>
-\end{lstlisting}
+\end{minted}
 добавьте еще один include, чтобы получилось так:
-\begin{lstlisting}[language=c++]
+\begin{minted}[breaklines]{c++}
 #include <QMainWindow>
 #include <qcustomplot.h>
-\end{lstlisting}
+\end{minted}
 В *.pro добавьте: "LIBS += -lqcustomplot", как показано на скриншоте ниже (если используется общеситемная или просто готовая библиотека qcustomplot). Это укажет линковщику, что нужно линковаться с библиотекой libqcustomplot.so или libqcustomplot.dll (расширение .so используется на UNIX-подобных ОС, .dll — на Windows).
 \addimghere{qtc32}{1}{Добавление инструкции линковаться с qcustomplot.so}{qtc32}
 
