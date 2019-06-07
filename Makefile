@@ -5,7 +5,8 @@ FONTSDIR = $(HOMEDIR)/.local/share/fonts
 all: build run
 
 build:
-	latexmk -xelatex -synctex=1 -jobname=qtcreator-guide main.tex
+	# -shell-escape is for LaTex package "minted"
+	latexmk -xelatex -synctex=1 -jobname=qtcreator-guide -shell-escape main.tex
 
 run:
 	xdg-open qtcreator-guide.pdf
@@ -21,6 +22,7 @@ clean:
 	*.synctex.gz \
 	*.toc \
 	*.xdv
+	rm -fvr _minted-*
 
 docker-image:
 	docker build -t docker-latex .

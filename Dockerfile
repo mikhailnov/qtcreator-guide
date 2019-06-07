@@ -20,7 +20,8 @@ RUN apt update && \
         latexmk \
         fonts-liberation2 \
         fonts-freefont-ttf \
-        texlive-fonts-extra
+        texlive-fonts-extra \
+        python3-pygments
 
 # Times New Roman and other fonts
 RUN apt install -y --reinstall ttf-mscorefonts-installer && \

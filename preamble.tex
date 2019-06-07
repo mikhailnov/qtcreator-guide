@@ -6,6 +6,9 @@
 \usepackage{pdfpages} % Вставка PDF
 
 \usepackage{listings} % Оформление исходного кода
+\usepackage[cache=false]{minted} % Оформление исходного кода, https://github.com/gpoore/minted/issues/92
+\setminted{fontsize=\small} % Уменьшение размера кода, иначе по ширине не влезает
+
 \lstset{
     basicstyle=\small\ttfamily, % Размер и тип шрифта
     breaklines=true,            % Перенос строк
@@ -53,8 +56,8 @@
 \hypersetup{
     colorlinks, urlcolor={black}, % Все ссылки черного цвета, кликабельные
     linkcolor={black}, citecolor={black}, filecolor={black},
-    pdfauthor={Амет Умеров},
-    pdftitle={Исследование процессов обеспечения безопасности облачных сред}
+    pdfauthor={Михаил Новоселов},
+    pdftitle={Руководство по Qt Creator}
 }
 
 % Оформление библиографии и подрисуночных записей через точку
