@@ -3,7 +3,6 @@
 \usepackage{fontspec} % XeTeX
 \usepackage{xunicode} % Unicode для XeTeX
 \usepackage{xltxtra}  % Верхние и нижние индексы
-\usepackage{pdfpages} % Вставка PDF
 
 \usepackage{listings} % Оформление исходного кода
 \usepackage[cache=false]{minted} % Оформление исходного кода, https://github.com/gpoore/minted/issues/92
@@ -13,9 +12,7 @@
     basicstyle=\small\ttfamily, % Размер и тип шрифта
     breaklines=true,            % Перенос строк
     tabsize=2,                  % Размер табуляции
-    frame=single,               % Рамка
-    literate={--}{{-{}-}}2,     % Корректно отображать двойной дефис
-    literate={---}{{-{}-{}-}}3  % Корректно отображать тройной дефис
+    frame=single                % Рамка
 }
 
 % Шрифты, xelatex
@@ -37,8 +34,6 @@
 % Абзацы и списки
 \usepackage{enumerate}   % Тонкая настройка списков
 \usepackage{indentfirst} % Красная строка после заголовка
-\usepackage{float}       % Расширенное управление плавающими объектами
-\usepackage{multirow}    % Сложные таблицы
 
 % Пути к каталогам с изображениями
 \usepackage{graphicx} % Вставка картинок и дополнений
